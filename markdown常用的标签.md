@@ -1,8 +1,3 @@
-﻿---
-layout: post
-title: "markdown常用的标签"
-categories: HTML
----
 标签|格式
 --|--
 标题|1~6个#[空格]
