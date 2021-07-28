@@ -1,4 +1,4 @@
-1.m3u8文件可以做为文本打开，可以看到里面存储着每一个片段的绝对路径。如果路径不对，需要修改替换为正确的路径。
+1.m3u8文件可以做为文本打开。vim打开文件可以看到里面存储着每一个片段的绝对路径。如果路径不对，需要修改替换为正确的路径。
 
 ```
 [xiebin@dev01 ~]$ cat xxx.m3u8
@@ -63,12 +63,12 @@ libpostproc    53.  3.100 / 53.  3.100
 ```
 2.解压源码包
 ```
- tar xvJf ffmpeg-4.1.tar.xz
+ [root@dev01 ~]#tar xvJf ffmpeg-4.1.tar.xz
 ```
 3.配置编译环境
 ```
-cd ffmpeg-4.1
-./configure --enable-shared --prefix=/usr/local/ffmpeg
+ [root@dev01 ~]#cd ffmpeg-4.1
+ [root@dev01 ~]#./configure --enable-shared --prefix=/usr/local/ffmpeg
 
 如果出现如下错误信息：
 
@@ -89,7 +89,7 @@ solve the problem.
 ```
 4.编译执行make（非常非常久.......）
 ```
-make
+ [root@dev01 ~]#make
 
 如果编译过程中出现如下错误信息：
 libavcodec/mqc.o: relocation r_x86_64_32 against `.rodata' can not be used when making a shared object; recompile with -fPIC
@@ -101,7 +101,7 @@ CFLAGS="-O3 -fPIC" ./configure --enable-shared  --prefix=/usr/local/ffmpeg
  
 6.修改文件/etc/ld.so.conf
 ```
-vim /etc/ld.so.conf
+ [root@dev01 ~]#vim /etc/ld.so.conf
 
 输入以下内容
 include ld.so.conf.d/*.conf
@@ -110,5 +110,5 @@ include ld.so.conf.d/*.conf
 
 7.测试
 ```
-/usr/local/ffmpeg/ffmpeg-4.1/ffmpeg -version
+ [root@dev01 ~]#/usr/local/ffmpeg/ffmpeg-4.1/ffmpeg -version
 ```
